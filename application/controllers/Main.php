@@ -8,7 +8,29 @@ class Main extends MY_Controller {
 	{
 		$this->load->view('ex1_sample');
     }
-    
+
+    public function ajaxload()
+	{
+
+        $this->load->model('Model_sample');
+        $data = $this->Model_sample->list_company();
+        var_dump($data);
+        exit();
+
+        /*foreach($this->Model_sample->list_company() as $result){
+            echo $result->cid;
+            $data[] = array("cid" => $result->cid,
+            "company_name" => $result->company_name);
+        }*/
+        //echo json_encode($data);
+    }
+
+
+
+    public function ex2()
+	{
+		$this->load->view('ex2');
+    }
 
     /*public function Login() {
         $this->load->model('Model_sample');

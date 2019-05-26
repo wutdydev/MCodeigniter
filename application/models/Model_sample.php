@@ -2,7 +2,13 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Model_Msalev extends CI_Model {
+class Model_sample extends CI_Model {
+
+    public function list_company() {
+        $sql = "select * from company_new";
+        return $this->db->query($sql)->result_array();
+  
+    }
 
     /*public function list_company() {
         $sql = "";
